@@ -1,6 +1,3 @@
-package Sort;
-
-import java.util.Arrays;
 
 //插入式排序属于内部排序法，是对于欲排序的元素以插入的方式找寻该元素的适当位置，以达到排序的目的
 //把 n个待排序的元素看成为一个有序表和一个无序表
@@ -32,7 +29,7 @@ public class InsertSort {
     }
 
 
-    public static void insertSort(int[] arr){
+    public static void insertSort(int[] arr) {
 
 ////        定义待插入的数{101,34,119,1}101相当于有序表
 //        int insertVal = arr[1];
@@ -57,7 +54,7 @@ public class InsertSort {
             insertVal = arr[i];
             insertIndex = i - 1;
 
-            while (insertIndex >= 0 && insertVal < arr[insertIndex]){//改变排列顺序只需要改变这个符号<即可
+            while (insertIndex >= 0 && insertVal < arr[insertIndex]) {//改变排列顺序只需要改变这个符号<即可
                 arr[insertIndex + 1] = arr[insertIndex];
                 insertIndex--;
             }

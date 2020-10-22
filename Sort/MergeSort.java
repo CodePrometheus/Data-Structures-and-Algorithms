@@ -1,6 +1,3 @@
-package Sort;
-
-import java.util.Arrays;
 
 //归并排序 (merge sort) 是一类与插入排序、交换排序、选择排序不同的另一种排序方法。
 // 归并的含义是将两个或两个以上的有序表合并成一个新的有序表
@@ -22,7 +19,7 @@ public class MergeSort {
         long start = System.currentTimeMillis();
         System.out.println("排序前的时间" + start);
 
-        mergeSort(arr,0, arr.length-1, tmp);
+        mergeSort(arr, 0, arr.length - 1, tmp);
 
         long end = System.currentTimeMillis();
         System.out.println("排序后的时间" + end);

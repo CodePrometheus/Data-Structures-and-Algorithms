@@ -1,6 +1,3 @@
-package Sort;
-
-import java.util.Arrays;
 
 //第一次从arr[0]~arr[n-1]中选取最小值，与arr[0]交换
 //第二次从arr[1]~arr[n-1]中选取最小值，与arr[1]交换

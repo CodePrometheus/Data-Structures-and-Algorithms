@@ -1,6 +1,3 @@
-package Sort;
-
-import java.util.Arrays;
 
 //快速排序（Quicksort）是对冒泡排序的一种改进。
 //通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，
