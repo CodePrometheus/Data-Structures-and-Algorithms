@@ -1,5 +1,3 @@
-package Queue;
-
 /**
  * 队列基本用法
  *
