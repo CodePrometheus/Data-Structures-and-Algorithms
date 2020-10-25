@@ -1,5 +1,3 @@
-package LinkedList;
-
 public class CircleLinkedListDemo {
     public static void main(String[] args) {
 
