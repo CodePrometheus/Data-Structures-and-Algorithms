@@ -1,5 +1,3 @@
-package LinkedList;
-
 import java.util.Arrays;
 
 public class SingleLinkedListDemo {
