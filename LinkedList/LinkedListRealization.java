@@ -123,6 +123,11 @@ public class LinkedListRealization<E> {
         return get(size - 1);
     }
 
+    // 获得链表的第一个元素
+    public E getFirst() {
+        return get(0);
+    }
+
     // 修改index的元素
     public void set(int index, E e) {
         if (index < 0 || index >= size) {
