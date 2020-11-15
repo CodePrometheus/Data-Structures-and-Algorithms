@@ -1,5 +1,5 @@
 /**
- * @Description: 数组实现栈
+ * @Description: 基于动态数组实现栈
  * @Author: zzStar
  * @Date: 2020/10/22 19:16
  */

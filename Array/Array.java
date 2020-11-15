@@ -45,9 +45,11 @@ public class Array<E> {
     // 在index索引的位置插入一个新元素e
     public void add(int index, E e) {
 
+        // 先判断
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
 
+        // 扩容
         if (size == data.length)
             resize(2 * data.length);
 
@@ -115,11 +117,16 @@ public class Array<E> {
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
 
         E ret = data[index];
+        // 移动
         for (int i = index + 1; i < size; i++)
             data[i - 1] = data[i];
-        size--;
-        data[size] = null; // loitering objects != memory leak
 
+//        if (size - index + 1 >= 0) System.arraycopy(data, index + 1, data, index + 1 - 1, size - index + 1);
+
+        size--;
+        data[size] = null; // loitering(闲散) objects != memory leak(内存泄漏)
+
+        // 满足条件缩小容量，防止复杂度震荡
         if (size == data.length / 4 && data.length / 2 != 0)
             resize(data.length / 2);
         return ret;
@@ -166,7 +173,7 @@ public class Array<E> {
         return res.toString();
     }
 
-    // 将数组空间的容量变成newCapacity大小
+    // 将数组空间的容量变成newCapacity大小，对外不可见
     private void resize(int newCapacity) {
 
         E[] newData = (E[]) new Object[newCapacity];

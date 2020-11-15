@@ -1,5 +1,5 @@
 /**
- * 复用Array，实现ArrayQueue
+ * 复用Array，实现ArrayQueue  FIFO
  *
  * @Author: zzStar
  * @Date: 10-22-2020 19:22
@@ -30,11 +30,13 @@ public class ArrayQueue<E> implements QueueDemo<E> {
         return array.getCapacity();
     }
 
+    // 入队
     @Override
     public void enqueue(E e) {
         array.addLast(e);
     }
 
+    // 出队
     @Override
     public E dequeue() {
         return array.removeFirst();
@@ -65,6 +67,7 @@ public class ArrayQueue<E> implements QueueDemo<E> {
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);
+            // 每进三个取出一个元素
             if (i % 3 == 2) {
                 queue.dequeue();
                 System.out.println(queue);

@@ -1,6 +1,6 @@
-
 /**
  * 循环队列
+ * 维护两个索引 front，tail -> (tail + 1) % c == front 队列满
  *
  * @Author: zzStar
  * @Date: 10-25-2020 09:01
@@ -28,6 +28,7 @@ public class LoopQueue<E> implements QueueDemo<E> {
 
     @Override
     public boolean isEmpty() {
+        // 队列为空的条件，上面实现时capacity+1有意的多出一个位置
         return front == tail;
     }
 
@@ -36,14 +37,17 @@ public class LoopQueue<E> implements QueueDemo<E> {
         if ((tail + 1) % data.length == front) {
             resize(getCapacity() * 2);
         }
+
         data[tail] = e;
         tail = (tail + 1) % data.length;
         size++;
     }
 
+    // 扩容
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity + 1];
         for (int i = 0; i < size; i++) {
+            // 由于循环队列，取模
             newData[i] = data[(i + front) % data.length];
         }
         data = newData;
@@ -56,13 +60,20 @@ public class LoopQueue<E> implements QueueDemo<E> {
         if (isEmpty()) {
             throw new IllegalArgumentException("Cant dequeue  from an empty queue");
         }
+
         E ret = data[front];
+        // 置空
         data[front] = null;
+        // 维护新的front
         front = (front + 1) % data.length;
         size--;
+
+        // 达到条件缩容
         if (size == getCapacity() / 4 && getCapacity() / 2 != 0) {
             resize(getCapacity() / 2);
         }
+
+        // 出队首元素
         return ret;
     }
 
