@@ -8,6 +8,7 @@ public class LinkedListRealization<E> {
 
     // 私有的结点类，隐藏底层实现，对外部屏蔽
     private class Node {
+
         public E e;
         public Node next;
 
@@ -143,6 +144,8 @@ public class LinkedListRealization<E> {
     // 查找链表中是否有元素e
     public boolean contains(E e) {
         Node cur = dummyHead.next;
+
+        // 有效结点
         while (cur != null) {
             if (cur.e.equals(e)) {
                 return true;

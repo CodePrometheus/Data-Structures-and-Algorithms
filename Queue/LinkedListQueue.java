@@ -30,6 +30,7 @@ public class LinkedListQueue<E> implements QueueDemo<E> {
         }
     }
 
+    // 从head端删除元素 出队，从tail端插入元素 入队
     private Node head, tail;
     private int size;
 
@@ -60,9 +61,13 @@ public class LinkedListQueue<E> implements QueueDemo<E> {
     @Override
     public E dequeue() {
         if (isEmpty()) throw new IllegalArgumentException("Cant dequeue  from an empty queue");
+
+        // 断开关系
         Node retNode = head;
         head = head.next;
         retNode.next = null;
+
+        // 只有一个元素，也就是head.next为空
         if (head == null) tail = null;
         size--;
         return retNode.e;
