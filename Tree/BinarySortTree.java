@@ -1,5 +1,3 @@
-package Tree;
-
 //二叉排序
 //树
 public class BinarySortTree {
