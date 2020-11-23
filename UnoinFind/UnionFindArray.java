@@ -3,12 +3,12 @@
  * @Author: zzStar
  * @Date: 2020/11/22 20:19
  */
-public class UnionFind implements UF {
+public class UnionFindArray implements UF {
 
     // 数组记录数据之间的关系
     private int[] id;
 
-    public UnionFind(int size) {
+    public UnionFindArray(int size) {
         id = new int[size];
 
         for (int i = 0; i < id.length; i++) {

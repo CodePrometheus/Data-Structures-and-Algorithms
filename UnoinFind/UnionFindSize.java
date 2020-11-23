@@ -1,21 +1,24 @@
 /**
- * 将每个元素，看作是一个结点
- * 孩子指向父亲
+ * 基于结点个数的大小进行合并  优化
+ * 其目的也就是在于合并两棵树的时候避免新树深度每次都增加
  *
  * @Author: zzStar
- * @Date: 11-23-2020 20:09
+ * @Date: 11-23-2020 22:00
  */
-public class QuickNode implements UF {
+public class UnionFindSize implements UF {
 
-    // 数组记录数据之间的关系
     private int[] parent;
 
-    public QuickNode(int size) {
-        parent = new int[size];
+    // sz[i]表示以i为根的集合中元素个数
+    private int[] sz;
 
-        // 初始化，每个结点指向自己，每个结点独立的是一个数，未形成连接关系
+    public UnionFindSize(int size) {
+        parent = new int[size];
+        sz = new int[size];
+
         for (int i = 0; i < size; i++) {
             parent[i] = i;
+            sz[i] = 1;
         }
     }
 
@@ -26,7 +29,6 @@ public class QuickNode implements UF {
     }
 
     // 合并元素p，q所属的集合
-    // 极端情况下，可能为链表
     @Override
     public void unionElements(int p, int q) {
         int pRoot = find(p);
@@ -36,8 +38,18 @@ public class QuickNode implements UF {
             return;
         }
 
-        // 指向q的根结点
-        parent[pRoot] = qRoot;
+        /**
+         * 对树的深度进行优化
+         * 根据两个元素所在树的元素个数不同判断合并方向
+         * 将元素个数少的集合合并到元素个数多的集合上
+         */
+        if (sz[pRoot] < sz[qRoot]) {
+            parent[pRoot] = qRoot;
+            sz[qRoot] += sz[pRoot];
+        } else {
+            parent[qRoot] = pRoot;
+            sz[pRoot] += sz[qRoot];
+        }
     }
 
     @Override
@@ -58,4 +70,5 @@ public class QuickNode implements UF {
         }
         return p;
     }
+
 }

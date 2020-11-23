@@ -1,21 +1,25 @@
 /**
- * 将每个元素，看作是一个结点
- * 孩子指向父亲
+ * 更为适用的，基于rank的优化
+ * rank[i] 表示根节点为i的树的高度
  *
  * @Author: zzStar
- * @Date: 11-23-2020 20:09
+ * @Date: 11-23-2020 22:40
  */
-public class QuickNode implements UF {
+public class UnionFindRank implements UF {
 
-    // 数组记录数据之间的关系
     private int[] parent;
 
-    public QuickNode(int size) {
-        parent = new int[size];
+    // 表示树的层数
+    private int[] rank;
 
-        // 初始化，每个结点指向自己，每个结点独立的是一个数，未形成连接关系
+    public UnionFindRank(int size) {
+        parent = new int[size];
+        rank = new int[size];
+
         for (int i = 0; i < size; i++) {
             parent[i] = i;
+            // 初始的时候层数自然也是1
+            rank[i] = 1;
         }
     }
 
@@ -26,7 +30,6 @@ public class QuickNode implements UF {
     }
 
     // 合并元素p，q所属的集合
-    // 极端情况下，可能为链表
     @Override
     public void unionElements(int p, int q) {
         int pRoot = find(p);
@@ -36,8 +39,21 @@ public class QuickNode implements UF {
             return;
         }
 
-        // 指向q的根结点
-        parent[pRoot] = qRoot;
+        /**
+         * 根据两个元素所在的树的rank不同判断合并方向
+         * 将rank低的集合并到rank高的集合上
+         */
+        if (rank[pRoot] < rank[qRoot]) {
+            parent[pRoot] = qRoot;
+            // 注意 -> 这里不需要维护rank数组 pRoot这棵树的高度最多 = qRoot的子树的高度
+            // rank[qRoot] += rank[pRoot];
+        } else if (rank[qRoot] < rank[pRoot]) {
+            parent[qRoot] = pRoot;
+        } else {
+            // 两棵树高度相等，合并层数就多个1
+            parent[qRoot] = pRoot;
+            rank[pRoot] += 1;
+        }
     }
 
     @Override
@@ -58,4 +74,5 @@ public class QuickNode implements UF {
         }
         return p;
     }
+
 }
