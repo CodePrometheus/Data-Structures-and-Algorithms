@@ -23,6 +23,11 @@ public class SegmentTree<E> {
     }
 
     private void buildSegmentTree(int treeIndex, int l, int r) {
+
+        if (l > r) {
+            return;
+        }
+
         if (l == r) {
             tree[treeIndex] = data[l];
             return;
