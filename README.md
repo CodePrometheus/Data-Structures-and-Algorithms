@@ -36,3 +36,13 @@ All Data Structures and Algorithms implemented in Java
 # 集合与映射
 * set
 * map
+
+# 二叉搜索树
+
+# Trie
+
+# UnionFind
+
+# AVL
+
+# RBT

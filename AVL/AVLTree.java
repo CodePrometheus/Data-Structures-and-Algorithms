@@ -188,9 +188,9 @@ public class AVLTree<K extends Comparable<K>, V> {
         int balanceFactor = getBalanceFactor(node);
 
         // 不满足平衡二叉树的条件
-        if (Math.abs(balanceFactor) > 1) {
-            System.out.println("balanceFactor = " + balanceFactor);
-        }
+//        if (Math.abs(balanceFactor) > 1) {
+//            System.out.println("balanceFactor = " + balanceFactor);
+//        }
 
         /**
          * 在这里维护平衡性
