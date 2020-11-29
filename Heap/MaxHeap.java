@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -30,8 +31,13 @@ public class MaxHeap<E extends Comparable<E>> {
     public MaxHeap(E[] arr) {
 
         data = new Array<>(arr);
-        for (int i = parent(arr.length - 1); i >= 0; i--) {
-            siftDown(i);
+//        for (int i = parent(arr.length - 1); i >= 0; i--) {
+//            siftDown(i);
+//        }
+        if (arr.length != 1) {
+            for (int i = parent(arr.length - 1); i >= 0; i--) {
+                siftDown(i);
+            }
         }
 
     }
@@ -138,10 +144,10 @@ public class MaxHeap<E extends Comparable<E>> {
     public static void main(String[] args) {
         int n = 100000;
 //        MaxHeap<Integer> maxHeap = new MaxHeap<>();
-        Integer[] testData = new Integer[n];
         Random random = new Random();
+        Integer[] testData1 = new Integer[n];
         for (int i = 0; i < n; i++) {
-            testData[i] = random.nextInt(Integer.MAX_VALUE);
+            testData1[i] = random.nextInt(Integer.MAX_VALUE);
         }
 /*
         int[] arr = new int[n];
@@ -155,10 +161,12 @@ public class MaxHeap<E extends Comparable<E>> {
         }
         System.out.println("Test MaxHeap Completed");
 */
-        double time1 = testHeap(testData, false);
+        Integer[] testData2 = Arrays.copyOf(testData1, n);
+
+        double time1 = testHeap(testData1, false);
         System.out.println("Without heapify:" + time1 + " s");
 
-        double time2 = testHeap(testData, true);
+        double time2 = testHeap(testData2, true);
         System.out.println("With heapify:" + time2 + " s");
     }
 
