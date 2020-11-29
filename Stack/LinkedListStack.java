@@ -4,12 +4,12 @@
  * @Author: zzStar
  * @Date: 10-26-2020 20:24
  */
-public class LinkedListStack<E> implements StackDemo<E> {
+public class LinkedListStack<E> implements IStack<E> {
 
-    private LinkedListRealization<E> list;
+    private LinkedListImpl<E> list;
 
     public LinkedListStack() {
-        list = new LinkedListRealization<>();
+        list = new LinkedListImpl<>();
     }
 
     @Override

@@ -428,9 +428,10 @@ public class BSTRecursion<E extends Comparable<E>> {
 
     private String generateDepthString(int depth) {
         StringBuilder res = new StringBuilder();
-//        for (int i = 0; i < depth; i++)
-//            res.append("--");
-        res.append("--".repeat(Math.max(0, depth)));
+        for (int i = 0; i < depth; i++) {
+            res.append("--");
+        }
+//        res.append("--".repeat(Math.max(0, depth)));
         return res.toString();
     }
 }

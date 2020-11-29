@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-05-2020 19:13
  */
-public class BSTMap<K extends Comparable<K>, V> implements MapUsage<K, V> {
+public class BSTMap<K extends Comparable<K>, V> implements IMap<K, V> {
 
     private class Node {
         public K key;

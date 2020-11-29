@@ -3,7 +3,7 @@
  * @Author: zzStar
  * @Date: 2020/11/22 20:19
  */
-public class UnionFindArray implements UF {
+public class UnionFindArray implements IUF {
 
     // 数组记录数据之间的关系
     private int[] id;

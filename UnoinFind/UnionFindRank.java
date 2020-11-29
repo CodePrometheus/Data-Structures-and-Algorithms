@@ -5,7 +5,7 @@
  * @Author: zzStar
  * @Date: 11-23-2020 22:40
  */
-public class UnionFindRank implements UF {
+public class UnionFindRank implements IUF {
 
     private int[] parent;
 

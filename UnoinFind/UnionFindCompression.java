@@ -5,7 +5,7 @@
  * @Author: zzStar
  * @Date: 11-23-2020 23:14
  */
-public class UnionFindCompression implements UF {
+public class UnionFindCompression implements IUF {
     private int[] parent;
 
     // 表示树的层数

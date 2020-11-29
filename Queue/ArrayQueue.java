@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 10-22-2020 19:22
  */
-public class ArrayQueue<E> implements QueueDemo<E> {
+public class ArrayQueue<E> implements IQueue<E> {
 
     private Array<E> array;
 

@@ -8,7 +8,7 @@ import java.util.Random;
 public class Compare {
 
     // 测试使用q运行opCount个enqueue和dequeue操作所需要的时间，单位：秒
-    private static double testQueue(QueueDemo<Integer> q, int opCount) {
+    private static double testQueue(IQueue<Integer> q, int opCount) {
 
         long startTime = System.nanoTime();
 

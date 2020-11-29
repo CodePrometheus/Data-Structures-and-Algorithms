@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 10-30-2020 11:04
  */
-public class LinkedListQueue<E> implements QueueDemo<E> {
+public class LinkedListQueue<E> implements IQueue<E> {
 
     private class Node {
         public E e;

@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class SingleLinkedListDemo {
+public class SingleLinkedListImpl {
     public static void main(String[] args) {
         //进行测试
         HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");

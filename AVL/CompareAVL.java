@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class CompareAVL {
 
-    private static double testMap(MapUsage<String, Integer> map, String filename) {
+    private static double testMap(IMap<String, Integer> map, String filename) {
 
         long startTime = System.nanoTime();
 

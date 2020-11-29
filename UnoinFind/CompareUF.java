@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class CompareUF {
 
-    private static double testUF(UF uf, int m) {
+    private static double testUF(IUF uf, int m) {
 
         int size = uf.getSize();
         Random random = new Random();

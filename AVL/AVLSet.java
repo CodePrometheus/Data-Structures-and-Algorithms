@@ -1,4 +1,4 @@
-public class AVLSet<E extends Comparable<E>> implements SetUsage<E> {
+public class AVLSet<E extends Comparable<E>> implements ISet<E> {
 
     private AVLTree<E, Object> avl;
 

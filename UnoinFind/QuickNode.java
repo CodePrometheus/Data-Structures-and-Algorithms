@@ -5,7 +5,7 @@
  * @Author: zzStar
  * @Date: 11-23-2020 20:09
  */
-public class QuickNode implements UF {
+public class QuickNode implements IUF {
 
     // 数组记录数据之间的关系
     private int[] parent;

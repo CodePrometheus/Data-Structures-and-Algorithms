@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-05-2020 10:45
  */
-public class LinkedListMap<K, V> implements MapUsage<K, V> {
+public class LinkedListMap<K, V> implements IMap<K, V> {
 
     private Node dummyHead;
     private int size;

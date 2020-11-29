@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-04-2020 21:48
  */
-public class BSTSet<E extends Comparable<E>> implements SetUsage<E> {
+public class BSTSet<E extends Comparable<E>> implements ISet<E> {
 
     private BSTRecursion<E> bstRecursion;
 

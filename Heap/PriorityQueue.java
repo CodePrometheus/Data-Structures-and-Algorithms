@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-03-2020 19:16
  */
-public class PriorityQueue<E extends Comparable<E>> implements QueueDemo<E> {
+public class PriorityQueue<E extends Comparable<E>> implements IQueue<E> {
 
     private MaxHeap<E> maxHeap;
 

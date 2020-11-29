@@ -3,7 +3,7 @@
  * @Author: zzStar
  * @Date: 2020/10/22 19:16
  */
-public class ArrayStack<E> implements StackDemo<E> {
+public class ArrayStack<E> implements IStack<E> {
 
     private Array<E> array;
 

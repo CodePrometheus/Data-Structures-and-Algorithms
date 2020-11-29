@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-23-2020 23:28
  */
-public class UnionFindRecursion implements UF {
+public class UnionFindRecursion implements IUF {
     private int[] parent;
 
     // 表示树的层数

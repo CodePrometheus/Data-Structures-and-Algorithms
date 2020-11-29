@@ -4,12 +4,12 @@
  * @Author: zzStar
  * @Date: 11-04-2020 21:40
  */
-public class LinkedListSet<E> implements SetUsage<E> {
+public class LinkedListSet<E> implements ISet<E> {
 
-    private LinkedListRealization<E> list;
+    private LinkedListImpl<E> list;
 
     public LinkedListSet() {
-        list = new LinkedListRealization<>();
+        list = new LinkedListImpl<>();
     }
 
     @Override

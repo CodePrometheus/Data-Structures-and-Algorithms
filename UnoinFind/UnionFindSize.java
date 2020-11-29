@@ -5,7 +5,7 @@
  * @Author: zzStar
  * @Date: 11-23-2020 22:00
  */
-public class UnionFindSize implements UF {
+public class UnionFindSize implements IUF {
 
     private int[] parent;
 

@@ -5,7 +5,7 @@
  * @Author: zzStar
  * @Date: 10-25-2020 09:01
  */
-public class LoopQueue<E> implements QueueDemo<E> {
+public class LoopQueue<E> implements IQueue<E> {
 
     private E[] data;
     private int front, tail;

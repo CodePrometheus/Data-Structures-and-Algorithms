@@ -3,7 +3,7 @@
  * @Author: zzStar
  * @Date: 2020/11/25 19:05
  */
-public class AVLMap<K extends Comparable<K>, V> implements MapUsage<K, V> {
+public class AVLMap<K extends Comparable<K>, V> implements IMap<K, V> {
 
     private AVLTree<K, V> avl;
 
