@@ -7,6 +7,15 @@ import java.util.Random;
  * @Date: 11-01-2020 19:41
  */
 public class MaxHeap<E extends Comparable<E>> {
+
+    /**
+     * 一个堆的高度为 logN，因此在堆中插入元素和删除最大元素的复杂度都为 logN。
+     * 对于堆排序，由于要对 N 个节点进行下沉操作，因此复杂度为 NlogN。
+     * 堆排序是一种原地排序，没有利用额外的空间。
+     * 现代操作系统很少使用堆排序，因为它无法利用局部性原理进行缓存，
+     * 也就是数组元素很少和相邻的元素进行比较和交换。
+     */
+
     private Array<E> data;
 
     public MaxHeap(int capacity) {
@@ -86,6 +95,16 @@ public class MaxHeap<E extends Comparable<E>> {
         return ret;
     }
 
+    /**
+     * 下沉操作：
+     * 1、仅当当前节点有左子节点时进入while循环体。
+     * 2、设立下沉后的位置为j，默认为左子节点的位置。
+     * 3、如果当前节点有右子节点且左子节点小于右子节点时，下沉后的位置j取右子节点的位置（j++）。
+     * 4、如果当前节点的位置k小于下沉后的位置j时，交换k与j的值，完成这一次的下沉操作。
+     * 5、更新当前节点的位置为j，如果当前节点还有左子节点则又会进入while循环体进行上述的下沉操作。
+     *
+     * @param k
+     */
     private void siftDown(int k) {
         // 判断条件，
         while (leftChild(k) < data.getSize()) {
