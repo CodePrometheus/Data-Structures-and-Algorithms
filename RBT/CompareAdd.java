@@ -51,5 +51,19 @@ public class CompareAdd {
 
         System.out.println("RBT: " + rbt + " s");
 
+        // test BST
+        startTime = System.nanoTime();
+
+        BSTImpl<Integer, Integer> bst = new BSTImpl<>();
+        for (Integer x : arrayList) {
+            bst.add(x, null);
+        }
+
+        endTime = System.nanoTime();
+
+        double bstT = (endTime - startTime) / 1000000000.0;
+
+        System.out.println("bst: " + bstT + " s");
+
     }
 }

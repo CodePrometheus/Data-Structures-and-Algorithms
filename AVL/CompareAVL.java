@@ -25,8 +25,8 @@ public class CompareAVL {
             }
 
             System.out.println("Total different words: " + map.getSize());
-            System.out.println("Frequency of but: " + map.get("but"));
-            System.out.println("Frequency of you: " + map.get("you"));
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
         }
 
         long endTime = System.nanoTime();
@@ -36,7 +36,7 @@ public class CompareAVL {
 
     public static void main(String[] args) {
 
-        String filename = "LICENSE";
+        String filename = "pride-and-prejudice.txt";
 
         BSTMap<String, Integer> bstMap = new BSTMap<>();
         double time1 = testMap(bstMap, filename);

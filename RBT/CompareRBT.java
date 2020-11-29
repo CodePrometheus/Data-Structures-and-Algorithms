@@ -8,11 +8,13 @@ import java.util.ArrayList;
  * @Date: 11-28-2020 16:53
  */
 public class CompareRBT {
+
     public static void main(String[] args) {
 
-        System.out.println("LICENSE");
+        System.out.println("pride-and-prejudice");
+        System.out.println("===========");
         ArrayList<String> words = new ArrayList<>();
-        if (FileOperation.readFile("LICENSE", words)) {
+        if (FileOperation.readFile("pride-and-prejudice.txt", words)) {
             System.out.println("Total words: " + words.size());
 
             // test RBT
@@ -38,8 +40,8 @@ public class CompareRBT {
             System.out.println("RBT: " + time + " s");
 
             System.out.println("Total different words: " + rbTree.getSize());
-            System.out.println("Frequency of but: " + rbTree.get("but"));
-            System.out.println("Frequency of you: " + rbTree.get("you"));
+            System.out.println("Frequency of PRIDE: " + rbTree.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + rbTree.get("prejudice"));
 
             System.out.println("=========================");
 
@@ -66,10 +68,37 @@ public class CompareRBT {
             System.out.println("avlTree: " + time + " s");
 
             System.out.println("Total different words: " + avlTree.getSize());
-            System.out.println("Frequency of but: " + avlTree.get("but"));
-            System.out.println("Frequency of you: " + avlTree.get("you"));
+            System.out.println("Frequency of PRIDE: " + avlTree.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + avlTree.get("prejudice"));
         }
 
+        System.out.println("====================");
+
+        // test BST
+        long startTime = System.nanoTime();
+
+        BSTImpl<String, Integer> bst = new BSTImpl<>();
+        for (String word : words) {
+            if (bst.contains(word)) {
+                bst.set(word, bst.get(word) + 1);
+            } else {
+                bst.add(word, 1);
+            }
+        }
+
+        for (String word : words) {
+            bst.contains(word);
+        }
+
+        long endTime = System.nanoTime();
+
+        double time = (endTime - startTime) / 1000000000.0;
+
+        System.out.println("BST: " + time + " s");
+
+        System.out.println("Total different words: " + bst.getSize());
+        System.out.println("Frequency of PRIDE: " + bst.get("pride"));
+        System.out.println("Frequency of PREJUDICE: " + bst.get("prejudice"));
 
     }
 }
