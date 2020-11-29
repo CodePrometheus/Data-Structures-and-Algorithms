@@ -198,6 +198,11 @@ public class BSTRecursion<E extends Comparable<E>> {
 
     // 非递归前序遍历 -> 深度优先遍历
     public void preOrderNR() {
+
+        if (root == null) {
+            return;
+        }
+
         Stack<Node> stack = new Stack<>();
         // 初始
         stack.push(root);
@@ -253,19 +258,24 @@ public class BSTRecursion<E extends Comparable<E>> {
 
     // 层序遍历 借助队列 -> 广度优先
     public void levelOrder() {
+
+        if (root == null) {
+            return;
+        }
+
         // 用链表实现队列这个接口
         Queue<Node> queue = new LinkedList<>();
-        queue.offer(root);
+        queue.add(root);
         while (!queue.isEmpty()) {
-            Node poll = queue.poll();
-            System.out.println(poll.e);
+            Node cur = queue.remove();
+            System.out.println(cur.e);
 
             // 入队  先进先出
-            if (poll.left != null) {
-                queue.offer(poll.left);
+            if (cur.left != null) {
+                queue.offer(cur.left);
             }
-            if (poll.right != null) {
-                queue.offer(poll.right);
+            if (cur.right != null) {
+                queue.offer(cur.right);
             }
         }
     }
