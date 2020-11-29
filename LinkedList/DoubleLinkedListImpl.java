@@ -4,7 +4,7 @@
 //修改与单向一样
 //可以实现自我删除某个节点，直接找到temp.pre.next=temp.next  temp.next.pre=temp.pre
 
-public class DoubleLinkedListDemo {
+public class DoubleLinkedListImpl {
 
     public static void main(String[] args) {
 

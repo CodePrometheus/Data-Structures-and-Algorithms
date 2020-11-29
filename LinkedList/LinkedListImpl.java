@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 10-25-2020 19:03
  */
-public class LinkedListRealization<E> {
+public class LinkedListImpl<E> {
 
     // 私有的结点类，隐藏底层实现，对外部屏蔽
     private class Node {
@@ -37,7 +37,7 @@ public class LinkedListRealization<E> {
     private Node dummyHead;
     private int size;
 
-    public LinkedListRealization() {
+    public LinkedListImpl() {
         dummyHead = new Node(null, null);
         size = 0;
     }
@@ -228,7 +228,7 @@ public class LinkedListRealization<E> {
     }
 
     public static void main(String[] args) {
-        LinkedListRealization<Integer> linkedList = new LinkedListRealization<>();
+        LinkedListImpl<Integer> linkedList = new LinkedListImpl<>();
         for (int i = 0; i < 5; i++) {
             linkedList.addFirst(i);
             System.out.println(linkedList);

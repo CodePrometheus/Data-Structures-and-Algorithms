@@ -1,11 +1,11 @@
-public class CircleLinkedListDemo {
+public class CircleLinkedListImpl {
     public static void main(String[] args) {
 
         CircleLinkedList circleLinkedList = new CircleLinkedList();
         circleLinkedList.addPersonNode(9);
         circleLinkedList.selectPersonNode();
 
-        circleLinkedList.countPerson(1,2,9);
+        circleLinkedList.countPerson(1, 2, 9);
 
     }
 }
@@ -75,27 +75,27 @@ class CircleLinkedList {
             helper = helper.getNext();
         }
 //        报数前，先让first和helper移动k-1次
-        for (int j = 0;j < startNode -1;j++){
+        for (int j = 0; j < startNode - 1; j++) {
             first = first.getNext();
             helper = helper.getNext();
         }
 //        报数时，同时移动m-1次，然后出圈
-        while (true){
-            if (helper == first){
+        while (true) {
+            if (helper == first) {
 //                此时圈中只有一个人员
                 break;
             }
 //            同时移动countNum-1,然后出圈
-            for (int j = 0;j < countNum - 1;j++){
+            for (int j = 0; j < countNum - 1; j++) {
                 first = first.getNext();
                 helper = helper.getNext();
             }
 //            此时first指向的节点就是要出圈的节点
-            System.out.printf("%d出圈",first.getNum());
+            System.out.printf("%d出圈", first.getNum());
             first = first.getNext();
             helper.setNext(first);
         }
-        System.out.printf("最后留在圈中的小孩为%d\n",helper.getNum());
+        System.out.printf("最后留在圈中的小孩为%d\n", helper.getNum());
     }
 
 
