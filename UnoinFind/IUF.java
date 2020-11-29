@@ -3,7 +3,7 @@
  * @Author: zzStar
  * @Date: 2020/11/22 20:14
  */
-public interface UF {
+public interface IUF {
 
     boolean isConnected(int p, int q);
 

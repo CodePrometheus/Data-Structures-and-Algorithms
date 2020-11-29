@@ -4,7 +4,7 @@
  * @Author: zzStar
  * @Date: 11-05-2020 10:45
  */
-public interface MapUsage<K, V> {
+public interface IMap<K, V> {
     void add(K key, V value);
 
     V remove(K key);

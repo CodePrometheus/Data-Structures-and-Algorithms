@@ -3,7 +3,7 @@
  * @Author: zzStar
  * @Date: 2020/11/04 21:45
  */
-public interface SetUsage<E> {
+public interface ISet<E> {
     void add(E e);
 
     void remove(E e);

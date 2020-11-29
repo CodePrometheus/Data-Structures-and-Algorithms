@@ -1,4 +1,4 @@
-public interface StackDemo<E> {
+public interface IStack<E> {
 
     int getSize();
 
