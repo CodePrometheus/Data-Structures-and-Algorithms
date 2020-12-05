@@ -1,4 +1,3 @@
-import java.io.FileInputStream;
 import java.util.ArrayList;
 
 /**
@@ -6,6 +5,26 @@ import java.util.ArrayList;
  *
  * @Author: zzStar
  * @Date: 11-24-2020 21:16
+
+ * AVL 的自平衡机制：
+ *      1、左旋转
+ *      2、右旋转
+ *
+ * 在什么时候维护平衡？
+ *      加入节点后，沿着节点向上维护平衡性。
+ *
+ * 时间复杂度 O(logn)
+ *
+ * AVL 优化：在维护每一个节点之前，都需要对 AVL 的高度进行重新的计算，
+ * 但是如果我们重新计算出的这个节点的高度与原先的高度相等的话，对于这个
+ * 节点的祖先节点就不再需要维护平衡的操作了。这是因为这个节点的高度和原先
+ * 一样，从它的父亲节点和祖先节点来看，它的子树的高度并没有发送变化，
+ * 所以不需要维护平衡了。
+ *
+ * AVL 树的局限性：红黑树的旋转操作相对更少，性能更优一些。
+ *
+ * @param <K> key
+ * @param <V> value
  */
 public class AVLTree<K extends Comparable<K>, V> {
 
