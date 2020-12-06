@@ -4,6 +4,13 @@
  *
  * @Author: zzStar
  * @Date: 10-25-2020 09:01
+ *
+ * 循环队列：
+ *      采用队尾和队首两个指针：front、tail，目的是将普通队列中的 出队
+ *      时间复杂度降为 O（1），省去复制数组的操作。
+ *
+ *
+ * @param <E>
  */
 public class LoopQueue<E> implements IQueue<E> {
 

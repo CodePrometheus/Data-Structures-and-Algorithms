@@ -3,6 +3,14 @@
  *
  * @Author: zzStar
  * @Date: 11-05-2020 10:45
+ *
+ *  映射 Map
+ *  1）、存储 Key：value 数据对的数据结构。
+ *  2）、根据 Key，寻找 Value。
+ *
+ *  非常容易使用链表或者二分搜索树来实现。
+ *                                  LinkedListMap  BSTMap   平均     最差
+ *  add、remove、set、get、contains     O(n)          O(h)   O(logn)  O(n)
  */
 public class LinkedListMap<K, V> implements IMap<K, V> {
 

@@ -1,6 +1,7 @@
 /**
  * 复用Array，实现ArrayQueue  FIFO
- *
+ * 数组队列实现：
+ *   其中 enqueue 的时间复杂度为 O（n)，需要使用循环队列改进为 O（1）。
  * @Author: zzStar
  * @Date: 10-22-2020 19:22
  */
