@@ -8,6 +8,7 @@ All Data Structures and Algorithms implemented in Java
 树形结构 —> 二分搜索树 AVL树 红黑树 堆 线段树 Trie UnionFind
 图结构   —> 领接表 领接矩阵
 ~~~
+数据结构篇对应的视频[BiliBili](https://www.bilibili.com/video/BV1L5411L7XV)
 
 ### 数组
 * 封装自定义数组
