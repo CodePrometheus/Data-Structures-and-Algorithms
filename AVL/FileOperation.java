@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,7 +15,7 @@ import java.util.Scanner;
 public class FileOperation {
 
     // 读取文件名称为filename中的内容，并将其中包含的所有词语放进words中
-    public static boolean readFile(String filename, ArrayList<String> words) {
+    public static boolean readFile(String filename, List<String> words) {
 
         if (filename == null || words == null) {
             System.out.println("filename is null or words is null");

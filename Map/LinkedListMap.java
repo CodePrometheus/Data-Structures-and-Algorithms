@@ -1,16 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 基于链表的Map
  *
  * @Author: zzStar
  * @Date: 11-05-2020 10:45
- *
- *  映射 Map
- *  1）、存储 Key：value 数据对的数据结构。
- *  2）、根据 Key，寻找 Value。
- *
- *  非常容易使用链表或者二分搜索树来实现。
- *                                  LinkedListMap  BSTMap   平均     最差
- *  add、remove、set、get、contains     O(n)          O(h)   O(logn)  O(n)
+ * <p>
+ * 映射 Map
+ * 1）、存储 Key：value 数据对的数据结构。
+ * 2）、根据 Key，寻找 Value。
+ * <p>
+ * 非常容易使用链表或者二分搜索树来实现。
+ * LinkedListMap  BSTMap   平均     最差
+ * add、remove、set、get、contains     O(n)          O(h)   O(logn)  O(n)
  */
 public class LinkedListMap<K, V> implements IMap<K, V> {
 
@@ -81,6 +84,9 @@ public class LinkedListMap<K, V> implements IMap<K, V> {
 
     @Override
     public void add(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("key can't be null!");
+        }
         Node node = getNode(key);
         if (node == null) {
             dummyHead.next = new Node(key, value, dummyHead.next);
@@ -117,6 +123,26 @@ public class LinkedListMap<K, V> implements IMap<K, V> {
         }
 
         return null;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Pride and Prejudice");
+        List<String> words = new ArrayList<>();
+        if (FileOperation.readFile("pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+        }
+        LinkedListMap<String, Integer> map = new LinkedListMap<>();
+        for (String word : words) {
+            if (map.contains(word)) {
+                map.set(word, map.get(word) + 1);
+            } else {
+                map.add(word, 1);
+            }
+        }
+        System.out.println("Total different words: " + map.getSize());
+        System.out.println("Frequency of PRIDE: " + map.get("pride"));
+        System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        System.out.println("===over===");
     }
 
 }
