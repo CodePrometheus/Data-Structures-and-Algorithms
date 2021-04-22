@@ -1,3 +1,4 @@
+package sort;
 
 //第一次从arr[0]~arr[n-1]中选取最小值，与arr[0]交换
 //第二次从arr[1]~arr[n-1]中选取最小值，与arr[1]交换
@@ -8,6 +9,17 @@
 //当遍历到数组的最后时，就得到最小数和下标
 //时间复杂度为O(n^2)
 //经过测试，显然，选择排序要比冒泡快
+
+import org.junit.Test;
+
+import java.util.Arrays;
+
+/**
+ * 每次找到数组中当前排序范围中的最小值并与该范围中的第一个数字交换，同时缩小待排序数组的排序范围
+ * 时间复杂度：最好情形O(n^2)，平均情形O(n^2)，最差情形O(n^2)
+ * 空间复杂度：O(1)
+ * 稳    定   性：不稳定
+ */
 public class SelectSort {
 
     public static void main(String[] args) {
@@ -31,11 +43,10 @@ public class SelectSort {
         System.out.println(end - start);
 
 
-
     }
 
 
-    public static void selectSort(int[] arr){
+    public static void selectSort(int[] arr) {
 
 ////        第一轮先假定
 //        int minIndex = 0;
@@ -77,25 +88,51 @@ public class SelectSort {
 //        System.out.println(Arrays.toString(arr));
 
 
-
 //        由上面的推导，得出
 //        总轮数应为长度-1,因为j就是从1开始,与后面进行比较
         for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
             int min = arr[i];
-            for (int j = i + 1;j < arr.length;j++){
-                if (min > arr[j]){//从大到小还是从小到大，只改变这里的符号即可
+            for (int j = i + 1; j < arr.length; j++) {
+                if (min > arr[j]) {//从大到小还是从小到大，只改变这里的符号即可
                     min = arr[j];
                     minIndex = j;
                 }
             }
-            if (minIndex != i){
+            if (minIndex != i) {
                 arr[minIndex] = arr[i];
                 arr[i] = min;
             }
         }
+    }
 
 
+    public int[] selectSort2(int[] target) {
+        if (target != null && target.length != 1) {
+            for (int i = 0; i < target.length; i++) {
 
+                int minIndex = 1;
+                for (int j = i + 1; j < target.length; j++) {
+                    if (target[minIndex] > target[j]) {
+                        minIndex = j;
+                    }
+                }
+
+                if (target[minIndex] != target[i]) {
+                    int min = target[minIndex];
+                    target[minIndex] = target[i];
+                    target[i] = min;
+                }
+            }
+        }
+        return target;
+    }
+
+
+    @Test
+    public void testSelectSort() {
+        int[] target = {101, 34, 119, 1, -8, 666, 1212, -2};
+        selectSort(target);
+        System.out.println(Arrays.toString(target));
     }
 }

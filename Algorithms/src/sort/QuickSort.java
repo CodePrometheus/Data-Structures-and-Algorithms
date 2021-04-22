@@ -1,4 +1,4 @@
-
+package sort;
 //快速排序（Quicksort）是对冒泡排序的一种改进。
 //通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，
 // 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列
@@ -11,7 +11,20 @@
 // 每次设置一个基准值，将小于基准值的都交换到左边，大于基准值的都交换到右边，
 // 这样不会像冒泡一样每次都只交换相邻的两个数，因此比较和交换的此数都变少了，速度自然更高。
 // 当然，也有可能出现最坏的情况，就是仍可能相邻的两个数进行交换。
-//快速排序基于分治思想，它的时间平均复杂度很容易计算得到为O(NlogN)。
+//快速排序基于分治思想，把一个串行分为两个子串行，它的时间平均复杂度很容易计算得到为O(NlogN)。
+
+import org.junit.Test;
+
+import java.util.Arrays;
+
+/**
+ * 1.确定分界点
+ * 2.调整区间
+ * 3.递归处理左右两段
+ * 快速排序依赖于原始序列，因此其时间复杂度从O(nlgn)到O(n^2)不等
+ * 时间复杂度：最好情形O(nlgn)，平均情形O(nlgn)，最差情形O(n^2)
+ * 就平均计算时间而言，快速排序是所有内部排序方法中最好的一个
+ */
 public class QuickSort {
     public static void main(String[] args) {
 //        int[] array = {-9, 78, 0, 23, -567, 70, -1, 900};
@@ -80,6 +93,42 @@ public class QuickSort {
         // i的索引处为上面已确定好的基准值的位置，无需再处理
         sort(array, left, i - 1);
         sort(array, i + 1, right);
+    }
+
+    public int sort2(int[] array, int l, int r) {
+        // 从数组中挑出一个元素，基准数
+        int pivot = l;
+        int index = pivot + 1;
+        for (int j = index; j <= r; j++) {
+            if (array[j] < array[pivot]) {
+                swap(array, j, index);
+            }
+        }
+        swap(array, pivot, index - 1);
+        return index - 1;
+    }
+
+    private int[] quickSort(int[] array, int left, int right) {
+        if (left < right) {
+            int partitionIndex = sort2(array, left, right);
+            sort2(array, left, partitionIndex - 1);
+            sort2(array, partitionIndex + 1, right);
+        }
+        return array;
+    }
+
+    private void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+
+    @Test
+    public void testQ() {
+        int[] nums = {-9, 78, 0, 23, -567, 70, -1, 900};
+        quickSort(nums);
+        System.out.println(Arrays.toString(nums));
     }
 
 }

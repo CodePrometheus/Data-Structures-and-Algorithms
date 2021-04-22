@@ -8,7 +8,6 @@ All Data Structures and Algorithms implemented in Java
 树形结构 —> 二分搜索树 AVL树 红黑树 堆 线段树 Trie UnionFind
 图结构   —> 领接表 领接矩阵
 ~~~
-数据结构篇对应的视频[BiliBili](https://www.bilibili.com/video/BV1L5411L7XV)
 
 ### 数组
 * 封装自定义数组
@@ -114,6 +113,9 @@ All Data Structures and Algorithms implemented in Java
 
 ### 哈希表
 
+### 图
+- 树是一种无环图，联通的无环图是树
+
 ### 时间复杂度
 
 #### 1、到底什么是大 O？
@@ -157,3 +159,19 @@ O(log(n)) 与 O(n) 有着本质的差别。
 
 
 ## 算法篇
+
+### 十大排序
+![](https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/res/sort.png)
+平方阶 (O(n2)) 排序 各类简单排序：直接插入、直接选择和冒泡排序。
+
+线性对数阶 (O(nlog2n)) 排序 快速排序、堆排序和归并排序；
+
+O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。 希尔排序
+
+线性阶 (O(n)) 排序 基数排序，此外还有桶、箱排序。
+
+关于稳定性：
+
+稳定的排序算法：冒泡排序、插入排序、归并排序和基数排序。
+
+不是稳定的排序算法：选择排序、快速排序、希尔排序、堆排序。
