@@ -1,4 +1,3 @@
-
 //双向链表
 //遍历方法和单链表一样，只不过双向链表既可以向后，也可以向前
 //修改与单向一样
@@ -49,17 +48,17 @@ public class DoubleLinkedListImpl {
 
 //创建一个双向链表的类
 //类里面定义curd方法
-class DoubleLinkedList{
+class DoubleLinkedList {
 
-//    先初始化一个头节点，保持不动，也不存放具体的数据
-    private HeroNode2 head = new HeroNode2(0,"","");
+    //    先初始化一个头节点，保持不动，也不存放具体的数据
+    private HeroNode2 head = new HeroNode2(0, "", "");
 
-//    返回头节点
-    public HeroNode2 getHead(){
+    //    返回头节点
+    public HeroNode2 getHead() {
         return head;
     }
 
-//    遍历双向链表
+    //    遍历双向链表
 //    显示链表[遍历]
     public void list() {
         //判断链表是否为空
@@ -81,7 +80,7 @@ class DoubleLinkedList{
     }
 
 
-//    添加方法
+    //    添加方法
     public void add(HeroNode2 heroNode) {
         //因为head节点不能动，因此需要一个辅助遍历temp
         HeroNode2 temp = head;
@@ -100,7 +99,7 @@ class DoubleLinkedList{
         heroNode.pre = temp;
     }
 
-    public void addByOrder(HeroNode2 heroNode){
+    public void addByOrder(HeroNode2 heroNode) {
         HeroNode2 temp = head;
         boolean flag = false; //添加的编号是否存在，默认不存在为false
         while (true) {
@@ -126,8 +125,7 @@ class DoubleLinkedList{
 //        将最后这个节点temp的next指向新的节点,新节点的pre指向最后个节点temp
         temp.next = heroNode;
         heroNode.pre = temp;
-}
-
+    }
 
 
     //修改节点信息，根据no编号来修改，即no编号不动  no即Node
@@ -162,22 +160,22 @@ class DoubleLinkedList{
     }
 
 
-//    删除节点
+    //    删除节点
 //    对于双向，直接找到即可，找到之后自我删除既可
-    public void del(int no){
+    public void del(int no) {
 
 //        是否为空
-        if (head.next == null){
+        if (head.next == null) {
             System.out.println("链表为空");
         }
 
         HeroNode2 temp = head.next;//辅助变量（指针）
         boolean flag = false;//标志是否找到待删除节点的
-        while (true){
-            if (temp == null){//到链表最后
+        while (true) {
+            if (temp == null) {//到链表最后
                 break;
             }
-            if (temp.no == no){
+            if (temp.no == no) {
                 //找到待删除节点的前一个节点temp
                 flag = true;
                 break;
@@ -185,13 +183,13 @@ class DoubleLinkedList{
             temp = temp.next;//temp后移，遍历
         }
 //        判断flag
-        if (flag){
+        if (flag) {
 //            找到删除
             temp.pre.next = temp.next;
-            if (temp.next != null){
+            if (temp.next != null) {
                 temp.next.pre = temp.pre;
             }
-        }else {
+        } else {
             System.out.printf("要删除的%d节点不存在\n", no);
         }
 
@@ -199,10 +197,7 @@ class DoubleLinkedList{
     }
 
 
-
 }
-
-
 
 
 //定义HeroNode2，每个对象即一个节点

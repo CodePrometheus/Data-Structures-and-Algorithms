@@ -4,6 +4,7 @@
  * @Date: 2020/10/22 19:20
  */
 public interface IQueue<E> {
+
     int getSize();
 
     boolean isEmpty();

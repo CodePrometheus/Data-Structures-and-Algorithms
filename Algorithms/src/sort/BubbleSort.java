@@ -27,15 +27,13 @@ public class BubbleSort {
     }
 
 
-
-
-//    将在main测试的冒泡排序封装成一个方法
-    public static void bubbleSort(int[] arr){
+    //    将在main测试的冒泡排序封装成一个方法
+    public static void bubbleSort(int[] arr) {
         //        没有优化的话，冒泡排序次数 = 数组大小 - 1
         int temp = 0;//临时变量
 //        如果发现在某趟排序中，没有发生一次交换，就可以提前结束冒泡排序
         boolean flag = false;//标识变量,表示是否进行过交换,false表没有交换
-        for (int i = 0; i < arr.length - 1 ; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
 //            通过注释代码的分析可以看出，代码只是在-1-()这里不同，所以采用嵌套for循环时间复杂度为O(n^2)
             for (int j = 0; j < arr.length - 1 - i; j++) {
 //            如果前面的数比后面的大，则交换，也就是大的数向后走
@@ -49,9 +47,9 @@ public class BubbleSort {
 //            System.out.println("第" + (i + 1) + "趟");
 //            System.out.println(Arrays.toString(arr));
 
-            if (!flag){//一次交换都没有发生过 !flag -> flag == false
+            if (!flag) {//一次交换都没有发生过 !flag -> flag == false
                 break;
-            }else {//每次结束后要重置flag，进行下一次判断
+            } else {//每次结束后要重置flag，进行下一次判断
                 flag = false;
             }
         }

@@ -38,6 +38,7 @@ public class LinkedListQueue<E> implements IQueue<E> {
     public int getSize() {
         return size;
     }
+
     @Override
     public boolean isEmpty() {
         return size == 0;

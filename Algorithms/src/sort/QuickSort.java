@@ -131,5 +131,38 @@ public class QuickSort {
         System.out.println(Arrays.toString(nums));
     }
 
+
+    /**
+     * 快排模板
+     */
+    public void quicksort(int arr[], int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int x = arr[left], i = left - 1, j = right + 1;
+        while (i < j) {
+            do {
+                i++;
+            }
+            while (arr[i] < x);
+            do {
+                j--;
+            }
+            while (arr[j] > x);
+
+            if (i < j) {
+                swapSort(arr, i, j);
+            }
+        }
+        quickSort(arr, left, j);
+        quickSort(arr, j + 1, right);
+    }
+
+    public void swapSort(int arr[], int a, int b) {
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
+    }
+
 }
 

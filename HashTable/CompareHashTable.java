@@ -12,7 +12,7 @@ public class CompareHashTable {
         System.out.println("Pride and Prejudice");
 
         ArrayList<String> words = new ArrayList<>();
-        if(FileOperation.readFile("pride-and-prejudice.txt", words)) {
+        if (FileOperation.readFile("pride-and-prejudice.txt", words)) {
             System.out.println("Total words: " + words.size());
             System.out.println("===============");
 
@@ -29,7 +29,7 @@ public class CompareHashTable {
                     bst.add(word, 1);
             }
 
-            for(String word: words)
+            for (String word : words)
                 bst.contains(word);
 
             long endTime = System.nanoTime();
@@ -49,7 +49,7 @@ public class CompareHashTable {
                     avl.add(word, 1);
             }
 
-            for(String word: words)
+            for (String word : words)
                 avl.contains(word);
 
             endTime = System.nanoTime();
@@ -69,7 +69,7 @@ public class CompareHashTable {
                     rbt.add(word, 1);
             }
 
-            for(String word: words)
+            for (String word : words)
                 rbt.contains(word);
 
             endTime = System.nanoTime();
@@ -90,7 +90,7 @@ public class CompareHashTable {
                     ht.add(word, 1);
             }
 
-            for(String word: words)
+            for (String word : words)
                 ht.contains(word);
 
             endTime = System.nanoTime();

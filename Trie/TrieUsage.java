@@ -6,24 +6,24 @@ import java.util.TreeMap;
  *
  * @Author: zzStar
  * @Date: 11-05-2020 22:28
-
+ * <p>
  * Trie 的删除操作
- *
+ * <p>
  * Trie 的局限性：next 指针是 TreeMap 数据类型，key 值总数最多可以达到26种。
  * 改进方式：使用压缩字典树 Compressed Trie
- *
+ * <p>
  * 三分搜索树（Ternary Search Tree）：时间换空间。
- *
+ * <p>
  * 后缀树
- *
+ * <p>
  * 子串查询算法：KMP、Boyer-Moore、Rabin-Karp。
- *
+ * <p>
  * 文件压缩实际上也算是一种字符串压缩。
- *
+ * <p>
  * 模式匹配：实现一个正则表达式引擎。
- *
+ * <p>
  * 编译原理：字符串应用很多。
- *
+ * <p>
  * DNA：超长字符串。
  */
 public class TrieUsage {

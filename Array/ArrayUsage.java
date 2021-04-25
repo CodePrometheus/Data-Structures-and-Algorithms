@@ -12,7 +12,7 @@ public class ArrayUsage {
         }
         System.out.println(array);
 
-        array.add(0,100);
+        array.add(0, 100);
         System.out.println(array);
 
 //        array.removeFirst();

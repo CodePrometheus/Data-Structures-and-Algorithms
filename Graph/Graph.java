@@ -75,6 +75,7 @@ public class Graph {
         return stringBuilder.toString();
     }
 
+    // 返回顶点
     public int V() {
         return V;
     }
