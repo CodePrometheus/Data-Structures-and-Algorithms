@@ -55,7 +55,7 @@ public class LinkedListImpl<E> {
         }
     }
 
-    //    private Node head;
+    // private Node head;
     // 常用的是创建一个虚拟的头节点
     private Node dummyHead;
     private int size;
